@@ -520,6 +520,8 @@ def create_from_images(tfrecord_dir, image_dir, shuffle):
     with TFRecordExporter(tfrecord_dir, len(image_filenames), print_progress=False) as tfr:
         order = tfr.choose_shuffled_order() if shuffle else np.arange(len(image_filenames))
         for idx in tqdm(range(order.size)):
+            # thanks https://www.gwern.net/Faces
+            print(image_filenames[order[idx]])
             im = PIL.Image.open(image_filenames[order[idx]])
             img = np.asarray(im)
             if img.ndim != 3:
