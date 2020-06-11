@@ -11,3 +11,5 @@ $ poetry install
 $ cd veqtor-stylegan
 $ python dataset_tool.py create_from_images ../datasets/batman ../data/batman
 ```
+
+thanks https://www.gwern.net/Faces
